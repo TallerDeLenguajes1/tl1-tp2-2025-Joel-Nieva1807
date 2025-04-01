@@ -1,0 +1,9 @@
+Respuestas del punto 2)
+f) ¿Puede ver el archivo tp2__2.c? ¿Por qué?
+No puedo ver el archivo, ya que ese archivo fue comitiado en la rama "Opcion_2". Y cuando vuelvo a la rama main (git checkout main) me muestra todos los commit realizados en la rama main.
+
+* En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
+Se creó un rama (linea) naranja alterna. Es una linea que bifurca de la rama principal (linea azul).
+
+*En VSCode vuelva al “Source Control” vea los cambios, ¿Qué nota? 
+La rama que bifurcaba (linea naranja) se unió a la linea azul (main).
