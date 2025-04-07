@@ -11,6 +11,7 @@ struct compu {
     char *tipo_cpu; // Tipo de procesador (apuntador a cadena de caracteres) 
    };
 void listarPCs(struct compu pcs[], int cantidad);
+void mostrarMasVieja(struct compu pcs[], int cantidad);
 int main()
 {
     struct compu arreglo_PCs[TAMA];
@@ -29,6 +30,7 @@ int main()
     }
 
     listarPCs(arreglo_PCs, TAMA);
+    mostrarMasVieja(arreglo_PCs, TAMA);
     
     
     
@@ -48,6 +50,31 @@ void listarPCs(struct compu pcs[], int cantidad){
 
         puts("--------------------------------");
     }
+    
+
+}
+
+void mostrarMasVieja(struct compu pcs[], int cantidad){
+    int masViejo = 2025;
+    int num;
+    for (int i = 0; i < cantidad; i++)
+    {
+
+        if (pcs[i].anio < masViejo)
+        {
+            masViejo= pcs[i].anio;
+            num= i;
+
+        }
+        
+    }
+    puts("Datos del PCs mas antiguo:");
+    puts("--------------------------------");
+    printf("Anio de fabricacion: %d.\n", pcs[num].anio);
+    printf("Velocidad de procesamiento: %d GHZ.\n", pcs[num].velocidad);
+    printf("Cantidad de nucleos: %d.\n", pcs[num].cantidad_nucleos);
+    printf("Tipo de procesador: %s.\n", pcs[num].tipo_cpu);
+    puts("--------------------------------");
     
 
 }
