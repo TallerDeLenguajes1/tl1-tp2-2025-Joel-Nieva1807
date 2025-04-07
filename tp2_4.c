@@ -10,8 +10,10 @@ struct compu {
     int cantidad_nucleos; // Cantidad de núcleos (valor entre 1 y 8) 
     char *tipo_cpu; // Tipo de procesador (apuntador a cadena de caracteres) 
    };
+
 void listarPCs(struct compu pcs[], int cantidad);
 void mostrarMasVieja(struct compu pcs[], int cantidad);
+void mostrarMasVeloz(struct compu pcs[], int cantidad);
 int main()
 {
     struct compu arreglo_PCs[TAMA];
@@ -31,6 +33,7 @@ int main()
 
     listarPCs(arreglo_PCs, TAMA);
     mostrarMasVieja(arreglo_PCs, TAMA);
+    mostrarMasVeloz(arreglo_PCs, TAMA);
     
     
     
@@ -76,5 +79,30 @@ void mostrarMasVieja(struct compu pcs[], int cantidad){
     printf("Tipo de procesador: %s.\n", pcs[num].tipo_cpu);
     puts("--------------------------------");
     
+
+}
+
+void mostrarMasVeloz(struct compu pcs[], int cantidad){
+    int masVeloz = 0;
+    int num;
+    for (int i = 0; i < cantidad; i++)
+    {
+
+        if (pcs[i].velocidad > masVeloz)
+        {
+            masVeloz= pcs[i].velocidad;
+            num=i;
+
+        }
+        
+    }
+    puts("Datos del PCs mas rapido:");
+    puts("--------------------------------");
+    printf("Velocidad de procesamiento: %d GHZ.\n", pcs[num].velocidad);
+    printf("Anio de fabricacion: %d.\n", pcs[num].anio);
+    printf("Cantidad de nucleos: %d.\n", pcs[num].cantidad_nucleos);
+    printf("Tipo de procesador: %s.\n", pcs[num].tipo_cpu);
+    puts("--------------------------------");
+
 
 }
