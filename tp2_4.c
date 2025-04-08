@@ -27,7 +27,7 @@ int main()
         arreglo_PCs[i].anio= rand() % (2024-2015 + 1) + 2015;
         arreglo_PCs[i].cantidad_nucleos= rand() % 8 + 1;
 
-        indice= rand() % 6; //genera un numero aletaorio entre 0 y 5, me servirá para apuntar a una cadena aleatoriamente posterirormente
+        indice= rand() % 6; //genera un numero aleatorio entre 0 y 5, me servirá luego para apuntar a una cadena aleatoriamente
         arreglo_PCs[i].tipo_cpu = tipos[indice];
     }
 
@@ -59,7 +59,7 @@ void listarPCs(struct compu pcs[], int cantidad){
 
 void mostrarMasVieja(struct compu pcs[], int cantidad){
     int masViejo = 2025;
-    int num;
+    int num=0;
     for (int i = 0; i < cantidad; i++)
     {
 
@@ -84,7 +84,7 @@ void mostrarMasVieja(struct compu pcs[], int cantidad){
 
 void mostrarMasVeloz(struct compu pcs[], int cantidad){
     int masVeloz = 0;
-    int num;
+    int num=0;
     for (int i = 0; i < cantidad; i++)
     {
 
